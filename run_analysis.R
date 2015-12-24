@@ -48,3 +48,7 @@ merged_data$activity<-gsub(6,"LAYING",merged_data$activity)
 ### subsetting only the columns that contain "mean" or "std" + subject + activity
 tidy_dataset <-select(merged_data,contains("mean()"), contains("std()"),contains("subject"),contains("activity"))
 ###  tidy data set with the average of each variable for each activity and each subject
+melted = melt(tidy_dataset, id.var = c("subject", "activity"))
+means = dcast(melted , subject + activity ~ variable, mean)
+### Writing into a text file
+write.table(means, file="tidy_data_project/tidy_data_means.txt")
