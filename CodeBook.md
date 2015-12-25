@@ -1,18 +1,18 @@
-# CookBook
+# CodeBook
 
 # Input
 
-The script assumes the UCI dataset is extracted directly into `./data/`. See the [README.md](README.md) for further details.
+The script assumes the dataset is extracted directly into the working directory. See the [README.md](README.md) for further details.
 
 # Output Data
 
-The resulting `./data/tidy_data.txt` dataset includes mean and standard deviation variables for the following original variables,
-
+The resulting `tidy_data_mean.txt` dataset includes mean and standard deviation variables for the following original variables,
+# Variables
 tBodyAcc, tGravityAcc, tBodyAccJerk, tBodyGyro, tBodyGyroJerk, tBodyAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag, fBodyAcc, fBodyAccJerk, fBodyGyro, fBodyAccMag, fBodyBodyAccJerkMag, fBodyBodyGyroMag, fBodyBodyGyroJerkMag. All three X, Y, Z directions are included.
 
 The above variables where chosen as they included either _mean_ or _std_ in their original names.
 
-# Transformations
+# Code Process
 
 The script, `run_analysis.R`, does the following,
 
