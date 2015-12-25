@@ -1,5 +1,6 @@
 setwd("c:/Users/Shobeir/Desktop/data/assignment")
 library(dplyr) # load dplyr library
+library(reshape2) #load reshape2 package
 ########## Initial cleaning of the test set
 test_main <- read.table(file="./test/X_test.txt") # Read the test data
 test_subj <- read.table(file="./test/subject_test.txt") #test subject
@@ -51,4 +52,4 @@ tidy_dataset <-select(merged_data,contains("mean()"), contains("std()"),contains
 melted = melt(tidy_dataset, id.var = c("subject", "activity"))
 means = dcast(melted , subject + activity ~ variable, mean)
 ### Writing into a text file
-write.table(means, file="tidy_data_project/tidy_data_means.txt")
+write.table(means, file="tidy_data_project/tidy_data_means.txt",row.name=FALSE)
